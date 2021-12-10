@@ -42,6 +42,14 @@ export class GuiModel {
                             "form": "GroupForm", 
                             "width": 2 
                         },
+                        { 
+                            "id": "activity", 
+                            "type": "autocomplete", 
+                            "name": "Activity",
+                            "url": "/activity", 
+                            "form": "AddActivityForm", 
+                            "width": 2 
+                        },
                         {
                             "id":   "location",
                             "type": "autocomplete",
@@ -215,9 +223,41 @@ export class GuiModel {
                             "color": "blue",
                             "search": true,
                             "url": "/friend",
+                            "page": "userpage",
+                        },
+                    ]
+                },
+                {
+                    "id": "userpage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": "EditFriend",
+                            "icon": "fa-user",
+                            "color": "green",
                             "form": {
                                 "form": "FriendForm"
                             }
+                        },
+                        {
+                            "type": "newButton",
+                            "name": "AddActivity",
+                            "icon": "fa-calendar",
+                            "color": "green",
+                            "form": {
+                                "form": "AddActivityForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-user",
+                            "color": "blue",
+                            "search": true,
+                            "url": "/friend",
+                            "page": "userpage",
                         },
                     ]
                 },
