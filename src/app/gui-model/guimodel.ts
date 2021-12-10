@@ -99,6 +99,14 @@ export class GuiModel {
                             "required": true
                         },
                         {
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
+                        {
                             "type": "deleteButton",
                             "name": "Delete"
                         },
@@ -174,6 +182,35 @@ export class GuiModel {
                             "defaultKey": "activityKey",
                             "readonly": true,
                             "form": "ActivityForm",
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                },
+                {
+                    "id": "AddfriendsForm",
+                    "title": "Friends",
+                    "url": "/activity/:activityKey/friend",
+                    "formFieldList": [
+                        {
+                            "id":   "friend",
+                            "type": "autocomplete",
+                            "name": "Friend",
+                            "url": "/friend",
+                            "defaultKey": "friendKey",
+                            "readonly": true,
+                            "form": "FriendForm",
                             "width": 2
                         },
                         {
@@ -364,6 +401,41 @@ export class GuiModel {
                             }
                         }, 
                     ] 
+                },{
+                    "id": "activitypage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": "EditActivity",
+                            "icon": "fa-calendar",
+                            "color": "green",
+                            "form": {
+                                "form": "ActivityForm"
+                            }
+                        },
+                        {
+                            "type": "newButton",
+                            "name": "AddActivity",
+                            "icon": "fa-calendar",
+                            "color": "green",
+                            "form": {
+                                "form": "AddfriendsForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-user",
+                            "color": "blue",
+                            "search": true,
+                            "url": "/activity/:activityKey/friend",
+                            "form": {
+                                "form": "AddActivityForm"
+                            }
+                        },
+                    ]
                 },
                 { 
                     "id": "activitiespage", 
@@ -372,7 +444,7 @@ export class GuiModel {
                         { 
                             "type": "newButton", 
                             "name": "NewActivity", 
-                            "icon": "fa-weixin", 
+                            "icon": "fa-calendar", 
                             "color": "green", 
                             "form": { 
                                 "form": "ActivityForm" 
@@ -384,9 +456,7 @@ export class GuiModel {
                             "color": "lime",
                             "search": true,
                             "url": "/activity",
-                            "form": {
-                            "form": "GroupForm"
-                            }
+                            "page": "activitypage",
                         },  
                     ] 
                 },
