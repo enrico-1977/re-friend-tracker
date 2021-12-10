@@ -113,6 +113,32 @@ export class GuiModel {
                     ]
                 },
                 {
+                    "id": "ActivityForm",
+                    "title": "Activity",
+                    "url": "/activity",
+                    "formFieldList": [
+                        {
+                            "id": "name",
+                            "type": "text",
+                            "name": "Activity",
+                            "width": 1,
+                            "required": true
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                },
+                {
                     "id": "AddActivityForm",
                     "title": "Activity",
                     "url": "/friend/:friendKey/activity",
@@ -196,7 +222,7 @@ export class GuiModel {
                         {
                             "type": "button",
                             "name": "Activity",
-                            "icon": "fa-running",
+                            "icon": "fa-calendar",
                             "color": "lime",
                             "page": "activitiespage",
                         },
@@ -256,8 +282,10 @@ export class GuiModel {
                             "icon": "fa-user",
                             "color": "blue",
                             "search": true,
-                            "url": "/friend",
-                            "page": "userpage",
+                            "url": "/activity",
+                            "form": {
+                                "form": "AddActivityForm"
+                            }
                         },
                     ]
                 },
@@ -329,7 +357,7 @@ export class GuiModel {
                         },
                         {
                             "type": "list",
-                            "icon": "fa-running",
+                            "icon": "fa-calendar",
                             "color": "lime",
                             "search": true,
                             "url": "/activity",
