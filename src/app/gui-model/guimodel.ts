@@ -282,7 +282,7 @@ export class GuiModel {
                             "icon": "fa-user",
                             "color": "blue",
                             "search": true,
-                            "url": "/activity",
+                            "url": "/friend/:friendKey/activity",
                             "form": {
                                 "form": "AddActivityForm"
                             }
