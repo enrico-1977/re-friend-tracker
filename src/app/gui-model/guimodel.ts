@@ -185,6 +185,13 @@ export class GuiModel {
                             "color": "pumpkin",
                             "page": "groupspage",
                         },
+                        {
+                            "type": "button",
+                            "name": "Activity",
+                            "icon": "fa-running",
+                            "color": "lime",
+                            "page": "activitiespage",
+                        },
                     ]
                 },
                 {
@@ -241,7 +248,8 @@ export class GuiModel {
                             }
                         },
                     ]
-                },{ 
+                },
+                { 
                     "id": "groupspage", 
                     "elementList": [ 
                         { "type": "backbutton", }, 
@@ -263,7 +271,32 @@ export class GuiModel {
                             "form": {
                             "form": "GroupForm"
                             }
-                            }, 
+                        }, 
+                    ] 
+                },
+                { 
+                    "id": "activitiespage", 
+                    "elementList": [ 
+                        { "type": "backbutton", }, 
+                        { 
+                            "type": "newButton", 
+                            "name": "NewActivity", 
+                            "icon": "fa-weixin", 
+                            "color": "green", 
+                            "form": { 
+                                "form": "ActivityForm" 
+                            } 
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-running",
+                            "color": "lime",
+                            "search": true,
+                            "url": "/activity",
+                            "form": {
+                            "form": "GroupForm"
+                            }
+                        },  
                     ] 
                 },
             ]
