@@ -199,6 +199,35 @@ export class GuiModel {
                     ]
                 },
                 {
+                    "id": "AddActivityForm2",
+                    "title": "Activity",
+                    "url": "/location/:locationKey/activity",
+                    "formFieldList": [
+                        {
+                            "id":   "activity",
+                            "type": "autocomplete",
+                            "name": "Activity",
+                            "url": "/activity",
+                            "defaultKey": "activityKey",
+                            "readonly": true,
+                            "form": "ActivityForm",
+                            "width": 1
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                },
+                {
                     "id": "AddfriendsForm",
                     "title": "Friends",
                     "url": "/activity/:activityKey/friend",
@@ -384,21 +413,24 @@ export class GuiModel {
                         {
                             "type": "newButton",
                             "name": "AddActivity",
-                            "icon": "fa-home",
+                            "icon": "fa-calendar",
                             "color": "green",
                             "width": 1,
                             "form": {
-                                "form": "ActivityForm"
+                                "form": "AddActivityForm2"
                             }
                         },
                         {
                             "type": "list",
-                            "icon": "fa-home",
+                            "icon": "fa-calendar",
                             "color": "lime",
                             "search": true,
                             "url": "/location/:locationKey/activity",
                             "form": {
                                 "form": "LocationForm"
+                                /*kann keine Aktivitäten in Ortschaften hinzufügen. Ich weiss
+                                nicht wie das zu bewerkstelligen ist. es kommt immer der 
+                                fehler <!DOCTYPE html> */
                             }
                         },
                     ]
